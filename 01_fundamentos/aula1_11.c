@@ -5,6 +5,7 @@
  *
  * Entrada em tela : int scanf("%formato", &varivel);
  *
+ *(c) Copyright 2015 Luiz Fernando Lopes Rodrigues Silva. All Rights Reserved.
  */
 
 #include <stdio.h>

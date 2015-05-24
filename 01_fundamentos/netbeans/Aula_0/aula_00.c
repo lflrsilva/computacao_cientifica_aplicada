@@ -3,6 +3,8 @@
  * Author: lflrsilva
  *
  * Created on April 6, 2015, 6:43 PM
+ *
+ *(c) Copyright 2015 Luiz Fernando Lopes Rodrigues Silva. All Rights Reserved.
  */
 
 #include <stdio.h>

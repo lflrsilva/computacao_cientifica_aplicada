@@ -6,6 +6,9 @@
  ou com uso de //
 
  Declaração e saída de variáveis em tela.
+
+ (c) Copyright 2015 Luiz Fernando Lopes Rodrigues Silva. All Rights Reserved.
+
  */
 
 // Área de declaração de bibliotecas e funções
