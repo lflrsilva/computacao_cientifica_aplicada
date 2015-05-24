@@ -1,0 +1,21 @@
+# definindo variaveis de compilacao
+# compilador
+CC     = gcc
+
+# Opcoes de compilacao
+# -g    : modo de depuracao
+# -Wall : ativa avisos de compilacao
+# -O    : modo de otimizacao
+CFLAGS = -g -Wall
+
+#construcao do executavel
+execc: codigo.o
+	$(CC) -o execc codigo.o
+
+# compilacao do codigo
+codigo.o: codigo.c
+	$(CC) $(CFLAGS) -c codigo.c
+
+# limpando o diretorio
+clean:
+	$(RM) execc codigo.o

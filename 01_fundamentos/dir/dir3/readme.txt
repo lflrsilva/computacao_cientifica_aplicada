@@ -1,0 +1,1 @@
+Realizar exemplos de listagem, remoção de arquivos e criação de diretórios

@@ -1,0 +1,55 @@
+# definindo variaveis de compilacao
+# compilador
+CC     = gcc
+
+# Opcoes de compilacao
+# -g    : modo de depuracao
+# -Wall : ativa avisos de compilacao
+# -O    : modo de otimizacao
+CFLAGS = -g -Wall
+
+# Define qualquer diretório adicional contendo arquivos header (*.h)
+# fora de /usr/include
+INCLUDES = 
+#INCLUDES = -I../include
+
+# Define o caminho das bibliotecas adicionais fora de /usr/lib
+LFLAGS =
+#LFLAGS = -L/home/newhall/lib  -L../lib
+
+# Define qualquer biblioteca a ser agrupada ao executavel:
+LIBS = 
+#LIBS = -lmylib -lm
+
+# Define os codigos fonte
+SRCS = codigo.c
+
+# Define os arquivos objeto
+OBJS = $(SRCS:.c=.o)
+
+# Define o arquivo executavel
+MAIN = execc
+
+# Aviso de compilacao concluida
+all:    $(MAIN)
+	@echo  Compilacao do aplicativo execc efetuada
+
+# Compilacao dos objetos
+$(MAIN): $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(MAIN) $(OBJS) $(LFLAGS) $(LIBS)
+
+# Compilacao do codigo
+# esta eh uma regra de construção substituindo .o's por .c's
+# usa variaveis automaticas $<: o nome do prerequisito da regra
+# (um arquivo .c) e $@: o nome da regra atual (um arquivo .o) 
+# (veja o manual do gnu make para mais detalhes)
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+
+# Limpando o diretorio
+clean:
+	$(RM) *.o *~ $(MAIN)
+
+# Obtendo as dependencias automaticamente
+depend: $(SRCS)
+	makedepend $(INCLUDES) $^
